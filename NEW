@@ -1,0 +1,9 @@
+Your master has come here!!!haha
+
+include <stdio.h>
+
+void main{
+
+printf("Hello World");
+getchar();
+}
