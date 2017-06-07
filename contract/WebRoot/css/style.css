@@ -50,7 +50,7 @@ input,select,button {
 	background: url(../images/search-bt.gif) no-repeat;
 }
 
-h2 {
+.mtitle {
 	/*	width: 180px;
 	height: 100px;
 	margin: 0 5px;	
@@ -178,7 +178,7 @@ input.button {
 }
 
 .list table {
-	width: 800px;
+	width: 700px;
 	margin: 0px 10px;
 	border-top: 3px solid #EEE;
 	font: 14px Verdana, Arial, Tahoma;
@@ -274,7 +274,7 @@ input.button {
 	font: 14px Tahoma;
 	line-height: 17px;
 	margin-right: 6px;
-	width: 800px;
+	width: 700px;
 	float:left;
 	border-bottom: #E4E8EB solid 1px;
 	text-align:right;

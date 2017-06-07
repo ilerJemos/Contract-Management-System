@@ -9,30 +9,39 @@ import com.ruanko.utils.AppException;
 public interface UserDao {
 	
 	/**
-	 * Verify whether exists users that has the same name 
+	 * Verify whether exist user that  has the same name 
 	 * 
-	 * @param name User name
-	 * @return Return true if there are users have same name,otherwise return false 
+	 * @param name  User name
+	 * @return Return true if exist user that  has the same name ，otherwise false
 	 * @throws AppException
 	 */
 	public boolean isExist(String name) throws AppException;
 	
 	/**
-	 * Save user information
+	 * Save user's information
 	 * 
-	 * @param user user object
-	 * @return Return true if saved successfully,otherwise return false
+	 * @param user User object
+	 * @return Return true if save successfully, otherwise false
 	 * @throws AppException
 	 */
 	public boolean add(User user) throws AppException;
 	
 	/**
-	 * Query user id according to the user name and password
-	 * @param name 
-	 * @param password 
-	 * @return User id
-	 * @throws AppException 
+	 * Query  User id according to user name and password
+	 * @param name User name
+	 * @param password
+	 * @return User id 
+	 * @throws AppException
 	 */
 	public int login(String name,String password) throws AppException;
+	
+	/**
+	 * Query user's information according to id
+	 * 
+	 * @param id  User id
+	 * @return User 
+	 * @throws AppException
+	 */
+	public User getById(int id) throws AppException;
 	
 }

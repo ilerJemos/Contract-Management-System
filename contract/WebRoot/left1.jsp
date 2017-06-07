@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Contract Management System - Administrator menu bar</title>
+	<title>Contract Management System - Administrator menu bar </title>
 	<link href="css/frame.css" rel="stylesheet" type="text/css" />
   </head>
   
@@ -32,10 +32,10 @@
 				Contract Management
 			</dt>
 			<dd>
-				<a href="#">Process Configuration</a>
+				<a href="toDfphtList" target="main"> Process Configuration</a>
 			</dd>
 			<dd>
-				<a href="#">Assigned Contract</a>
+				<a href="#"> Distributed Contract</a>
 			</dd>
 			<dd>
 				<a href="#">Query Process</a>

@@ -1,5 +1,8 @@
 package com.ruanko.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.ruanko.dao.RightDao;
 import com.ruanko.dao.RoleDao;
 import com.ruanko.dao.UserDao;
@@ -52,7 +55,7 @@ public class UserService {
 	 * 
 	 * @param name 
 	 * @param password 
-	 * @return Query the matched user id according to the condition , otherwise it returns 0
+	 * @return Query the matched user number according to the condition , otherwise it returns 0
 	 * @throws AppException
 	 */
 	public int login(String name, String password) throws AppException {
@@ -69,7 +72,7 @@ public class UserService {
 	}
 	
 	/**
-	 * Get the role information that corresponding to the user
+	 * Get role information that corresponding to the user
 	 * 
 	 * @param userId 
 	 * @return Role object
@@ -79,7 +82,7 @@ public class UserService {
 		Role role = null;// Declare role
 		int roleId = -1; // Initialize  roleId
 		try {
-			//  Get the roleId that corresponding to the user
+			// Get the roleId that corresponding to the user
 			roleId = rightDao.getRoleIdByUserId(userId);
 			if(roleId > 0){
 				// Get role information
@@ -91,4 +94,42 @@ public class UserService {
 		}
 		return role;
 	}
+	
+	/**
+	 * Get user list that corresponding to the role
+	 * 
+	 * @param roleId 
+	 * @return User list
+	 * @throws AppException
+	 */
+	public List<User> getUserListByRoleId(int roleId) throws AppException {
+		// Initialize  userList
+		List<User> userList = new ArrayList<User>();
+		// Declare userIds
+		List<Integer> userIds = null; 
+		
+		try {
+			/*
+			 * 1.Get designated user's userIds
+			 */
+			userIds = rightDao.getUserIdsByRoleId(roleId);
+			
+			/*
+			 * 2.Get user information list according to userIds
+			 */ 
+			for (int userId : userIds) {
+				// Get user's information
+				User user = userDao.getById(userId);
+				if (user != null) {
+					userList.add(user); 
+				}
+			}
+		} catch (AppException e) {
+			e.printStackTrace();
+			throw new AppException("com.ruanko.service.UserService.getUserList");
+		}	
+		// Return userList
+		return userList;
+	}
+
 }

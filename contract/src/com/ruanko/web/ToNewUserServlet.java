@@ -18,7 +18,7 @@ public class ToNewUserServlet extends HttpServlet{
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Set request's character encoding
+		// SSet request's character encoding
 		request.setCharacterEncoding("UTF-8");
 		
 		// Declare session

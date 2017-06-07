@@ -18,7 +18,7 @@ public class ToOperatorServlet extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Set request's character encoding
+		// Set character set of request to "UTF-8"
 		request.setCharacterEncoding("UTF-8");
 		
 		// Declare session
@@ -27,7 +27,7 @@ public class ToOperatorServlet extends HttpServlet {
 		session = request.getSession();
 		Integer userId = (Integer)session.getAttribute("userId");
 		
-		// If the user is not loggin, then jump to login page
+		// If the user is not logged in, then jump to the login page
 		if (userId == null) {
 			response.sendRedirect("toLogin");
 		}else {

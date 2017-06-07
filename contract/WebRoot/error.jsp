@@ -5,6 +5,12 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Contract Management System - Exception page</title>
 		<link href="css/frame.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">  
+ 			// Make the page as the parent window display
+ 			if(top!=self){
+ 				top.location.href=self.location.href;
+ 			}  
+  		</script>
 	</head>
 	<body>
 		<div class="header">
@@ -12,10 +18,10 @@
 				Welcome to Contract Management System!
 			</div>
 			<h1>
-				<img src="images/logo_title.png" alt="Contract Management System" />
+				<img src="images/logo_title.png"  alt="Contract Management System" />
 			</h1>
 		</div>
-
+		
 		<div class="error">
 			<p>
 				System is under maintenance......
@@ -23,7 +29,7 @@
 		</div>
 
 		<div class="footer">
-			<ul>
+			<ul>		
 				<li>
 					<a target="_blank" href="#">Contract Management System</a>
 				</li>
@@ -34,13 +40,8 @@
 					<a target="_blank" href="#">Help</a>
 				</li>
 			</ul>
-
-			<p>
-				Copyright&nbsp;&copy;&nbsp;Ruanko COE &nbsp;
-				<a href="http://www.ruanko.com" title="www.ruanko.com"
-					target="_blank"><strong>www.ruanko.com</strong>
-				</a>&nbsp;Copyright Reserved
-			</p>
+			
+			<p>Copyright&nbsp;&copy;&nbsp;Ranko COE&nbsp;<a href="http://www.ruanko.com" title="www.ruanko.com" target="_blank"><strong>www.ruanko.com</strong></a>&nbsp;Copyright Reserved</p>
 		</div>
 	</body>
 </html>

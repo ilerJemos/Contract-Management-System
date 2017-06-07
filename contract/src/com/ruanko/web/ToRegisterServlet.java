@@ -26,7 +26,7 @@ public class ToRegisterServlet extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Forward to registration page
+		// Forward to the registration page
 		request.getRequestDispatcher("/register.jsp")
 				.forward(request, response);
 	}

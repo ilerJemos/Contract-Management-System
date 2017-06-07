@@ -21,7 +21,14 @@
 					return false;
 				}
 			}
-		</script>	
+		</script>
+		<script type="text/javascript">  
+ 			// Make the page as the parent window display
+ 			if(top!=self){
+ 				top.location.href=self.location.href;
+ 			}  
+  		</script>
+  	
 	</head>
 
 	<body>
@@ -44,7 +51,7 @@
 							<td width="60">
 								User name:
 							</td>
-							<!-- Get user name-->
+							<!-- Get user name -->
 							<%
 								// Set the name's default value is "",to avoid the page display null.
 								String name = "";
