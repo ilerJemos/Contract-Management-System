@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  
+    <!-- Configure the access of IndexServlet -->
+	<servlet>
+		<!-- Set Servlet name -->
+		<servlet-name>index</servlet-name>
+		<!-- Set the Servlet class that processing requests: complete package path + class name -->
+		<servlet-class>com.ruanko.web.IndexServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<!-- The Servlet name should keep consistent as above-mentioned -->
+		<servlet-name>index</servlet-name>
+		<!-- The access path of Servlet -->
+		<url-pattern>/index</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ToRegisterServlet -->
+	<servlet>
+		<!-- Set Servlet name -->
+		<servlet-name>toRegister</servlet-name>
+		<!-- Set the Servlet class that processing requests: complete package path + class name -->
+		<servlet-class>com.ruanko.web.ToRegisterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<!-- The Servlet name should keep consistent as above-mentioned -->
+		<servlet-name>toRegister</servlet-name>
+		<!-- The access path of Servlet -->
+		<url-pattern>/toRegister</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of RegisterServlet-->
+	<servlet>
+		<!-- Set Servlet name -->
+		<servlet-name>register</servlet-name>
+		<!-- Set the Servlet class that processing requests: complete package path + class name -->
+		<servlet-class>com.ruanko.web.RegisterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<!-- The Servlet name should keep consistent as above-mentioned -->
+		<servlet-name>register</servlet-name>
+		<!-- The access path of Servlet -->
+		<url-pattern>/register</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ToLoginServlet-->
+	<servlet>
+		<!-- Set Servlet name -->
+		<servlet-name>toLogin</servlet-name>
+		<!-- Set the Servlet class that processing requests: complete package path + class name -->
+		<servlet-class>com.ruanko.web.ToLoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<!-- The Servlet name should keep consistent as above-mentioned -->
+		<servlet-name>toLogin</servlet-name>
+		<!-- The access path of Servlet -->
+		<url-pattern>/toLogin</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ToNewUserServlet-->
+	<servlet>
+		<!-- Set Servlet name -->
+		<servlet-name>toNewUser</servlet-name>
+		<!-- Set the Servlet class that processing requests: complete package path + class name -->
+		<servlet-class>com.ruanko.web.ToNewUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<!-- The Servlet name should keep consistent as above-mentioned -->
+		<servlet-name>toNewUser</servlet-name>
+		<!-- The access path of Servlet -->
+		<url-pattern>/toNewUser</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ToErrorServlet-->
+	<servlet>
+		<!-- Set Servlet name -->
+		<servlet-name>toError</servlet-name>
+		<!-- Set the Servlet class that processing requests: complete package path + class name -->
+		<servlet-class>com.ruanko.web.ToErrorServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<!-- The Servlet name should keep consistent as above-mentioned -->
+		<servlet-name>toError</servlet-name>
+		<!-- The access path of Servlet -->
+		<url-pattern>/toError</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of LoginServlet-->
+	<servlet>
+		<!-- Set Servlet name -->
+		<servlet-name>login</servlet-name>
+		<!-- Set the Servlet class that processing requests: complete package path + class name -->
+		<servlet-class>com.ruanko.web.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<!-- The Servlet name should keep consistent as above-mentioned -->
+		<servlet-name>login</servlet-name>
+		<!-- The access path of Servlet -->
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of LogoutServlet-->
+	<servlet>
+		<!-- Set Servlet name -->
+		<servlet-name>logout</servlet-name>
+		<!-- Set the Servlet class that processing requests: complete package path + class name -->
+		<servlet-class>com.ruanko.web.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<!-- The Servlet name should keep consistent as above-mentioned -->
+		<servlet-name>logout</servlet-name>
+		<!-- The access path of Servlet -->
+		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ToAdminServlet-->
+	<servlet>
+		<servlet-name>toAdmin</servlet-name>
+		<servlet-class>com.ruanko.web.ToAdminServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>toAdmin</servlet-name>
+		<url-pattern>/toAdmin</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ToOperatorServlet-->
+	<servlet>
+		<servlet-name>toOperator</servlet-name>
+		<servlet-class>com.ruanko.web.ToOperatorServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>toOperator</servlet-name>
+		<url-pattern>/toOperator</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ToDraftServlet -->
+	<servlet>
+		<servlet-name>toDraft</servlet-name>
+		<servlet-class>com.ruanko.web.ToDraftServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>toDraft</servlet-name>
+		<url-pattern>/toDraft</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of DraftServlet -->
+	<servlet>
+		<servlet-name>draft</servlet-name>
+		<servlet-class>com.ruanko.web.DraftServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>draft</servlet-name>
+		<url-pattern>/draft</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ToDfphtListServlet -->
+	<servlet>
+		<servlet-name>toDfphtList</servlet-name>
+		<servlet-class>com.ruanko.web.ToDfphtListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>toDfphtList</servlet-name>
+		<url-pattern>/toDfphtList</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ToAssignOperServlet-->
+	<servlet>
+		<servlet-name>toAssignOper</servlet-name>
+		<servlet-class>com.ruanko.web.ToAssignOperServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>toAssignOper</servlet-name>
+		<url-pattern>/toAssignOper</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of AssignOperServlet -->
+	<servlet>
+		<servlet-name>assignOper</servlet-name>
+		<servlet-class>com.ruanko.web.AssignOperServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>assignOper</servlet-name>
+		<url-pattern>/assignOper</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
