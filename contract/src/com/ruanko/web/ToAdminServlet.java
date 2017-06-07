@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet for accessing new user page 
+ * Servlet for accessing administrator page
  */
-public class ToNewUserServlet extends HttpServlet{
-	
+public class ToAdminServlet extends HttpServlet {
+
 	/**
-	 * Jump to new user page
+	 * Jump to Administrator page
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Set request's character encoding
+		// Set the request's character encoding
 		request.setCharacterEncoding("UTF-8");
 		
 		// Declare session
@@ -27,12 +27,12 @@ public class ToNewUserServlet extends HttpServlet{
 		session = request.getSession();
 		Integer userId = (Integer)session.getAttribute("userId");
 		
-		// If user is not login,jump to login page
+		// If the user is not logged in, then jump to the login page
 		if (userId == null) {
 			response.sendRedirect("toLogin");
 		}else {
-			// Forward to the user page
-			request.getRequestDispatcher("/newUser.jsp").forward(request, response);
+			// Forwarded to the contract administrator page
+			request.getRequestDispatcher("/frame1.jsp").forward(request, response);
 		}
 	}
 
@@ -44,5 +44,5 @@ public class ToNewUserServlet extends HttpServlet{
 		// Call doPost() to process request
 		this.doPost(request, response);
 	}
-
+	
 }

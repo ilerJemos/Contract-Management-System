@@ -24,7 +24,7 @@
 		<div class="content">
 			<p>
 				You hava no contract operation privileges,<br />
-				please waiting for the administrator to configure permissions for
+				please waiting for the administrators to configure permissions for
 				you!
 				<br />
 				<%

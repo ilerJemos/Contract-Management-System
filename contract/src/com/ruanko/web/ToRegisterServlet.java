@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet for accessing register page
+ * Servlet for accessing Registration page
  */
 public class ToRegisterServlet extends HttpServlet {
 
@@ -17,7 +17,7 @@ public class ToRegisterServlet extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Call doGet() to process request
+		// call doGet() to process request
 		doGet(request, response);
 	}
 
@@ -26,7 +26,7 @@ public class ToRegisterServlet extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// Forward to the registration page
+		// Forward to registration page
 		request.getRequestDispatcher("/register.jsp")
 				.forward(request, response);
 	}

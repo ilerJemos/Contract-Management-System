@@ -15,8 +15,8 @@
 	</ul>
 
 	<p>
-		Copyright&nbsp;&copy;&nbsp;Ruanko COE &nbsp;
-		<a href="http://www.ruanko.com" title="www.ruanko.com" target="_blank"><strong>www.ruanko.com</strong>
+		Copyright&nbsp;&copy;&nbsp;Ruanko COE&nbsp;
+		<a href="http://www.ruanko.com" title="wwww.ruanko.com" target="_blank"><strong>www.ruanko.com</strong>
 		</a>&nbsp;Copyright Reserved
 	</p>
 </div>

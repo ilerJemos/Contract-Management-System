@@ -7,7 +7,7 @@
   
     <!-- Configure the access of IndexServlet -->
 	<servlet>
-		<!-- Set the name of Servlet -->
+		<!-- Set Servlet name -->
 		<servlet-name>index</servlet-name>
 		<!-- Set the Servlet class that processing requests: complete package path + class name -->
 		<servlet-class>com.ruanko.web.IndexServlet</servlet-class>
@@ -21,7 +21,7 @@
 	
 	<!-- Configure the access of ToRegisterServlet -->
 	<servlet>
-		<!-- Set the name of Servlet -->
+		<!-- Set Servlet name -->
 		<servlet-name>toRegister</servlet-name>
 		<!-- Set the Servlet class that processing requests: complete package path + class name -->
 		<servlet-class>com.ruanko.web.ToRegisterServlet</servlet-class>
@@ -35,7 +35,7 @@
 	
 	<!-- Configure the access of RegisterServlet-->
 	<servlet>
-		<!-- Set the name of Servlet -->
+		<!-- Set Servlet name -->
 		<servlet-name>register</servlet-name>
 		<!-- Set the Servlet class that processing requests: complete package path + class name -->
 		<servlet-class>com.ruanko.web.RegisterServlet</servlet-class>
@@ -115,6 +115,26 @@
 		<servlet-name>logout</servlet-name>
 		<!-- The access path of Servlet -->
 		<url-pattern>/logout</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ToAdminServlet-->
+	<servlet>
+		<servlet-name>toAdmin</servlet-name>
+		<servlet-class>com.ruanko.web.ToAdminServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>toAdmin</servlet-name>
+		<url-pattern>/toAdmin</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ToOperatorServlet-->
+	<servlet>
+		<servlet-name>toOperator</servlet-name>
+		<servlet-class>com.ruanko.web.ToOperatorServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>toOperator</servlet-name>
+		<url-pattern>/toOperator</url-pattern>
 	</servlet-mapping>
 
 </web-app>

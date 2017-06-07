@@ -9,12 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet for accessing new user page 
+ * Servlet for accessing contract operator page
  */
-public class ToNewUserServlet extends HttpServlet{
-	
+public class ToOperatorServlet extends HttpServlet {
+
 	/**
-	 * Jump to new user page
+	 * Jump to contract operator page
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -27,15 +27,15 @@ public class ToNewUserServlet extends HttpServlet{
 		session = request.getSession();
 		Integer userId = (Integer)session.getAttribute("userId");
 		
-		// If user is not login,jump to login page
+		// If the user is not loggin, then jump to login page
 		if (userId == null) {
 			response.sendRedirect("toLogin");
 		}else {
-			// Forward to the user page
-			request.getRequestDispatcher("/newUser.jsp").forward(request, response);
+			// Forward to the contract operator page
+			request.getRequestDispatcher("/frame2.jsp").forward(request, response);
 		}
 	}
-
+	
 	/**
 	 * Process GET requests
 	 */
@@ -44,5 +44,4 @@ public class ToNewUserServlet extends HttpServlet{
 		// Call doPost() to process request
 		this.doPost(request, response);
 	}
-
 }

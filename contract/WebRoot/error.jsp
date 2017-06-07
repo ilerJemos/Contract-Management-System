@@ -18,7 +18,7 @@
 
 		<div class="error">
 			<p>
-				System is under maintenance...
+				System is under maintenance......
 			</p>
 		</div>
 
