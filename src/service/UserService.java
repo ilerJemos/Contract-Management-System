@@ -13,7 +13,7 @@ public class UserService {
 	private UserDao userDao = null;// Define a userDao interface object
 
 	/**
-	 * No-arg constructor method is used to initialize userDao instance
+	 * No-arg constructor method is used to initialize userDao instance 
 	 */
 	public UserService() {
 		userDao = new UserDaoImpl();
@@ -26,7 +26,7 @@ public class UserService {
 	 * @throws AppException
 	 */
 	public boolean register(User user) throws AppException {
-		boolean flag = false;//Define flag
+		boolean flag = false;// Define flag
 		try {
 			if (!userDao.isExist(user.getName())) {// Execute save operation when the user does not exist
 				flag = userDao.add(user);// Return the operation result back to flag

@@ -3,17 +3,16 @@ package dao;
 import model.User;
 import utils.AppException;
 
-
 /**
  * User Data Access Layer Interface
  */
 public interface UserDao {
 	
-	/** 
-	 * Verify whether there are  users that has the same name exists
+	/**
+	 * Verify whether exists users that has the same name 
 	 * 
-	 * @param name  User name
-	 * @return Return true if there are users have same name,otherwise return false 
+	 * @param name User name
+	 * @return Return true if there are users have same name,otherwise return false  
 	 * @throws AppException
 	 */
 	public boolean isExist(String name) throws AppException;
@@ -21,7 +20,7 @@ public interface UserDao {
 	/**
 	 * Save user information
 	 * 
-	 * @param user  user object
+	 * @param user user object
 	 * @return Return true if saved successfully,otherwise return false
 	 * @throws AppException
 	 */
