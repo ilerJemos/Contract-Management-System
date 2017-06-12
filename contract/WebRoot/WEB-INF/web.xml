@@ -177,7 +177,7 @@
 		<url-pattern>/toAssignOper</url-pattern>
 	</servlet-mapping>
 	
-	<!-- Configure the access of AssignOperServlet -->
+	<!-- Configure the access of AssignOperServlet-->
 	<servlet>
 		<servlet-name>assignOper</servlet-name>
 		<servlet-class>com.ruanko.web.AssignOperServlet</servlet-class>
@@ -185,6 +185,86 @@
 	<servlet-mapping>
 		<servlet-name>assignOper</servlet-name>
 		<url-pattern>/assignOper</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ToDhqhtListServlet -->
+	<servlet>
+		<servlet-name>toDhqhtList</servlet-name>
+		<servlet-class>com.ruanko.web.ToDhqhtListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>toDhqhtList</servlet-name>
+		<url-pattern>/toDhqhtList</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ToAddHQOpinionServlet  -->
+	<servlet>
+		<servlet-name>toAddHQOpinion</servlet-name>
+		<servlet-class>com.ruanko.web.ToAddHQOpinionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>toAddHQOpinion</servlet-name>
+		<url-pattern>/toAddHQOpinion</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of AddHQOpinionServlet  -->
+	<servlet>
+		<servlet-name>addHQOpinion</servlet-name>
+		<servlet-class>com.ruanko.web.AddHQOpinionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>addHQOpinion</servlet-name>
+		<url-pattern>/addHQOpinion</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ContractDetailServlet  -->
+	<servlet>
+		<servlet-name>contractDetail</servlet-name>
+		<servlet-class>com.ruanko.web.ContractDetailServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>contractDetail</servlet-name>
+		<url-pattern>/contractDetail</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ToDdghtListServlet -->
+	<servlet>
+		<servlet-name>toDdghtList</servlet-name>
+		<servlet-class>com.ruanko.web.ToDdghtListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>toDdghtList</servlet-name>
+		<url-pattern>/toDdghtList</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ToDgContract -->
+	<servlet>
+		<servlet-name>toDgContract</servlet-name>
+		<servlet-class>com.ruanko.web.ToDgContractServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>toDgContract</servlet-name>
+		<url-pattern>/toDgContract</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of DgContract -->
+	<servlet>
+		<servlet-name>dgContract</servlet-name>
+		<servlet-class>com.ruanko.web.DgContractServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dgContract</servlet-name>
+		<url-pattern>/dgContract</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ShowHQOpinionServlet -->
+	<servlet>
+		<servlet-name>showHQOpinion</servlet-name>
+		<servlet-class>com.ruanko.web.ShowHQOpinionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>showHQOpinion</servlet-name>
+		<url-pattern>/showHQOpinion</url-pattern>
 	</servlet-mapping>
 	
 </web-app>

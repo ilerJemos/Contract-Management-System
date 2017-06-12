@@ -17,7 +17,7 @@
 					<a href="toDraft" target="main">Draft Contract</a>
 				</dd>
 				<dd>
-					<a href="#">Contract to be finalized</a>
+					<a href="toDdghtList" target="main">Contract to be finalized</a>
 				</dd>
 				<dd>
 					<a href="#">Finalized Contract</a>
@@ -31,7 +31,7 @@
 					Countersign
 				</dt>
 				<dd>
-					<a href="#">Contract to be countersigned</a>
+					<a href="toDhqhtList" target="main">Contract to be countersigned</a>
 				</dd>
 				<dd>
 					<a href="#">Countersigned Contract</a>
