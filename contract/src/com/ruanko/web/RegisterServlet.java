@@ -35,7 +35,7 @@ public class RegisterServlet extends HttpServlet {
 		 * Call methods in business logic layer to process business logic 
 		 */
 		try {
-			//Instantiate the object of entity class User  
+			//Instantiate the entity class object User 
 			User user = new User();
 			// Initialize the user business logic class
 			UserService userService = new UserService();

@@ -13,12 +13,12 @@ import com.ruanko.service.ContractService;
 import com.ruanko.utils.AppException;
 
 /**
- * Servlet for accessing countersign page
+ * Servlet of accessing sign page
  */
-public class ToAddHQOpinionServlet extends HttpServlet {
+public class ToAddQDInfoServlet extends HttpServlet {
 
 	/**
-	 * Jump to countersign page
+	 * Jump to sign page
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -27,11 +27,11 @@ public class ToAddHQOpinionServlet extends HttpServlet {
 		
 		// Declare session
 		HttpSession session = null;
-		// Get session by using request
+		// Get session by using request object
 		session = request.getSession();
 		Integer userId = (Integer)session.getAttribute("userId");
 		
-		// If user is not login, jump to login page
+		// If the user is not login, then jump to login page
 		if (userId == null) {
 			response.sendRedirect("toLogin");
 		} else {
@@ -47,8 +47,8 @@ public class ToAddHQOpinionServlet extends HttpServlet {
 
 				// Save contract to request
 				request.setAttribute("contract", contract);
-				//  Forward to countersign page
-				request.getRequestDispatcher("/addHQOpinion.jsp").forward(
+				// Forward to sign page
+				request.getRequestDispatcher("/addQDInformation.jsp").forward(
 						request, response);
 			} catch (AppException e) {
 				e.printStackTrace();

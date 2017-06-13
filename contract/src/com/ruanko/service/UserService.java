@@ -80,7 +80,7 @@ public class UserService {
 	 */
 	public Role getUserRole(int userId) throws AppException {	
 		Role role = null;// Declare role
-		int roleId = -1; // Initialize  roleId
+		int roleId = -1; // Initialize roleId
 		try {
 			// Get the roleId that corresponding to the user
 			roleId = rightDao.getRoleIdByUserId(userId);

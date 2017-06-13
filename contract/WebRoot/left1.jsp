@@ -35,7 +35,7 @@
 				<a href="toDfphtList" target="main">Process Configuration</a>
 			</dd>
 			<dd>
-				<a href="#">Distributed Contract</a>
+				<a href="#">Assigned Contract</a>
 			</dd>
 			<dd>
 				<a href="#">Query Process</a>

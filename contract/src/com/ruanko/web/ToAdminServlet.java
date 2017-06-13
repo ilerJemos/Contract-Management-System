@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Servlet for accessing Administrator page
+ * Servlet for accessing administrator page
  */
 public class ToAdminServlet extends HttpServlet {
 

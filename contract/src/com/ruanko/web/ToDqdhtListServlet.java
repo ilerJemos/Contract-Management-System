@@ -1,6 +1,8 @@
 package com.ruanko.web;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -8,48 +10,45 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.ruanko.model.Contract;
+import com.ruanko.model.ConBusiModel;
 import com.ruanko.service.ContractService;
 import com.ruanko.utils.AppException;
 
 /**
- * Servlet for accessing countersign page
+ * Access page of contract to be signed
  */
-public class ToAddHQOpinionServlet extends HttpServlet {
+public class ToDqdhtListServlet extends HttpServlet{
 
 	/**
-	 * Jump to countersign page
+	 *Jump to page of contract to be signed
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+			throws ServletException, IOException {	
 		// Set the request's character encoding
 		request.setCharacterEncoding("UTF-8");
 		
 		// Declare session
 		HttpSession session = null;
-		// Get session by using request
+		//  Get session by using request
 		session = request.getSession();
 		Integer userId = (Integer)session.getAttribute("userId");
 		
 		// If user is not login, jump to login page
 		if (userId == null) {
 			response.sendRedirect("toLogin");
-		} else {
-
-			// Get contract id
-			int conId = Integer.parseInt(request.getParameter("conId"));
-
+		}else {
+			
 			try {
-				// Initialize contractService
+				//Initialize contractService
 				ContractService contractService = new ContractService();
-				// Query contract information according to contract id
-				Contract contract = contractService.getContract(conId);
-
-				// Save contract to request
-				request.setAttribute("contract", contract);
-				//  Forward to countersign page
-				request.getRequestDispatcher("/addHQOpinion.jsp").forward(
-						request, response);
+				// Initialize contractList
+				List<ConBusiModel> contractList = new ArrayList<ConBusiModel>();
+				// Call business logic layer to get list of contract to be signed
+				contractList = contractService.getDqdhtList(userId);
+				// Save contractList to request
+				request.setAttribute("contractList", contractList);
+				// Forward to contract to be signed page
+				request.getRequestDispatcher("/dqdhtList.jsp").forward(request, response);
 			} catch (AppException e) {
 				e.printStackTrace();
 				// Redirect to the exception page
@@ -57,7 +56,7 @@ public class ToAddHQOpinionServlet extends HttpServlet {
 			}
 		}
 	}
-
+	
 	/**
 	 * Process GET requests
 	 */
@@ -66,4 +65,5 @@ public class ToAddHQOpinionServlet extends HttpServlet {
 		// Call doPost() to process request
 		this.doPost(request, response);
 	}
+
 }

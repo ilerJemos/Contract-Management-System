@@ -26,7 +26,7 @@ public class ContractDaoImpl implements ContractDao {
 	 */
 	public boolean add(Contract contract) throws AppException{
 		boolean flag = false;// Operation flag
-		//Declare Connection object,PreparedStatement object and ResultSet object
+		// Declare database connection object, pre-compiled object and results set object
 		Connection conn = null;
 		PreparedStatement psmt = null;
 		ResultSet rs = null;
@@ -34,7 +34,7 @@ public class ContractDaoImpl implements ContractDao {
 		try {
 			// Create database connection
 			conn = DBUtil.getConnection();
-			//Declare operation statement,save contract information, "?" is a Placeholder
+			//Declare operation statement,save contract information, "?" is a placeholder
 			String sql = "insert into t_contract" 
 				+"(user_id,customer,num,name,beginTime,endTime,content) "
 				+"values(?,?,?,?,?,?,?)";
@@ -67,7 +67,7 @@ public class ContractDaoImpl implements ContractDao {
 			throw new AppException(
 			"com.ruanko.dao.impl.ContractDaoImpl.add");
 		} finally {
-			// Close the database operation object, release resources
+			// Close database object operation, release resources
 			DBUtil.closeResultSet(rs);
 			DBUtil.closeStatement(psmt);
 			DBUtil.closeConnection(conn);
@@ -86,7 +86,7 @@ public class ContractDaoImpl implements ContractDao {
 		// Declare contract
 		Contract contract = null;
 		
-		//Declare Connection object,PreparedStatement object and ResultSet object
+		// Declare database connection object, pre-compiled object and result set object
 		Connection conn = null;
 		PreparedStatement psmt = null;
 		ResultSet rs = null;
@@ -124,7 +124,7 @@ public class ContractDaoImpl implements ContractDao {
 			throw new AppException(
 					"com.ruanko.dao.impl.ContractDaoImpl.getById");
 		} finally {
-			// Close the database operation object, release resources
+			//  Close the database operation object
 			DBUtil.closeResultSet(rs);
 			DBUtil.closeStatement(psmt);
 			DBUtil.closeConnection(conn);
@@ -140,9 +140,9 @@ public class ContractDaoImpl implements ContractDao {
 	 * @throws AppException
 	 */
 	public List<Integer> getIdsByUserId(int userId) throws AppException {
-		// Initialize ids
+		// Initialize id set
 		List<Integer> ids = new ArrayList<Integer>();
-		//Declare Connection object,PreparedStatement object and ResultSet object
+		// Declare database connection object, pre-compiled object and result set object
 		Connection conn = null;
 		PreparedStatement psmt = null;
 		ResultSet rs = null;
@@ -157,7 +157,7 @@ public class ContractDaoImpl implements ContractDao {
 			psmt = conn.prepareStatement(sql);
 			// Set values for the placeholder '?'
 			psmt.setInt(1, userId);
-			//  Query result set
+			// Query result set
 			rs = psmt.executeQuery();
 			
 			// Get information in result set by loop,and save it to conIds
@@ -168,7 +168,7 @@ public class ContractDaoImpl implements ContractDao {
 			e.printStackTrace();
 			throw new AppException("com.ruanko.dao.impl.ContractDaoImpl.getIdsByUserId");
 		} finally {
-			// Close the database operation object, release resources
+			// Close database object operation, release resources
 			DBUtil.closeResultSet(rs);
 			DBUtil.closeStatement(psmt);
 			DBUtil.closeConnection(conn);
@@ -185,7 +185,7 @@ public class ContractDaoImpl implements ContractDao {
 	 */
 	public boolean updateById(Contract contract) throws AppException {
 		boolean flag = false;// Operation flag
-		//Declare Connection object,PreparedStatement object
+		// Declare database connection object, pre-compiled object
 		Connection conn = null;
 		PreparedStatement psmt = null;
 		try {
@@ -217,7 +217,7 @@ public class ContractDaoImpl implements ContractDao {
 			e.printStackTrace();
 			throw new AppException("com.ruanko.dao.impl.ContractDaoImpl.updateById");
 		} finally {
-			// Close the database operation object, release resources
+			// Close database operation object
 			DBUtil.closeStatement(psmt);
 			DBUtil.closeConnection(conn);
 		}

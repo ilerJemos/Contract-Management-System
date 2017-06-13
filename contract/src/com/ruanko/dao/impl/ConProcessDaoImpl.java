@@ -19,7 +19,7 @@ import com.ruanko.utils.DBUtil;
 public class ConProcessDaoImpl implements ConProcessDao{
 	
 	/**
-	 * Determine whether the record of specified contract id is exist in the contract process table
+	 * Judgement whether the record of specified contract id is exist in the contract process table
 	 * 
 	 * @param conId Contract id
 	 * @return boolean Return true if exist,otherwise return false
@@ -28,7 +28,7 @@ public class ConProcessDaoImpl implements ConProcessDao{
 	public boolean isExist(int conId) throws AppException{
 		boolean flag = false;// Operation flag
 		
-		//Declare Connection object,PreparedStatement object and ResultSet object
+		// Declare database connection object, pre-compiled object and result set object
 		Connection conn = null;
 		PreparedStatement psmt = null;
 		ResultSet rs = null;
@@ -36,11 +36,11 @@ public class ConProcessDaoImpl implements ConProcessDao{
 		try {
 			// Create database connection
 			conn = DBUtil.getConnection();
-			// Declare operation statement:specifies the amount of contract Id's records, "?" is a placeholder
+			// Declare operation statement:specifies the number of contract id's records, "?" is a placeholder
 			String sql = "select count(id) as n from t_contract_process where con_id = ? and del = 0";
 				
 			psmt = conn.prepareStatement(sql);// pre-compiled sql
-			// Set values for the placeholder
+			// Set value for the placeholder
 			psmt.setInt(1, conId);
 			// Execute query operation
 			rs = psmt.executeQuery();
@@ -54,7 +54,7 @@ public class ConProcessDaoImpl implements ConProcessDao{
 			throw new AppException(
 			"com.ruanko.dao.impl.ConProcessDaoImpl.isExist");
 		} finally {
-			// Close the database operation object, release resources
+			// Close database object operation, release resources
 			DBUtil.closeResultSet(rs);
 			DBUtil.closeStatement(psmt);
 			DBUtil.closeConnection(conn);
@@ -71,7 +71,7 @@ public class ConProcessDaoImpl implements ConProcessDao{
 	 */
 	public boolean add(ConProcess conProcess)  throws AppException{	
 		boolean flag = false;// Operation flag
-		//Declare Connection object,PreparedStatement object and ResultSet object
+		// Declare database connection object, pre-compiled object and result set object
 		Connection conn = null;
 		PreparedStatement psmt = null;
 		
@@ -99,7 +99,7 @@ public class ConProcessDaoImpl implements ConProcessDao{
 			throw new AppException(
 			"com.ruanko.dao.impl.ConProcessDaoImpl.add");
 		} finally {
-			// Close the database operation object, release resources
+			// Close database object operation, release resources
 			DBUtil.closeStatement(psmt);
 			DBUtil.closeConnection(conn);
 		}
@@ -117,7 +117,7 @@ public class ConProcessDaoImpl implements ConProcessDao{
 		// Initialize conIds
 		List<Integer> conIds = new ArrayList<Integer>();
 		
-		//Declare Connection object,PreparedStatement object and ResultSet object
+		// Declare database connection object, pre-compiled object and result set object
 		Connection conn = null;
 		PreparedStatement psmt = null;
 		ResultSet rs = null;
@@ -147,7 +147,7 @@ public class ConProcessDaoImpl implements ConProcessDao{
 			throw new AppException(
 			"com.ruanko.dao.impl.ConProcessDaoImpl.getConIds");
 		} finally {
-			// Close the database operation object, release resources
+			// Close database object operation, release resources
 			DBUtil.closeResultSet(rs);
 			DBUtil.closeStatement(psmt);
 			DBUtil.closeConnection(conn);
@@ -166,7 +166,7 @@ public class ConProcessDaoImpl implements ConProcessDao{
 	 */
 	public boolean update(ConProcess conProcess) throws AppException {
 		boolean flag = false;// Operation flag
-		//Declare Connection object,PreparedStatement object and ResultSet object
+		// Declare database connection object, pre-compiled object and results set object
 		Connection conn = null;
 		PreparedStatement psmt = null;
 		try {
@@ -176,7 +176,7 @@ public class ConProcessDaoImpl implements ConProcessDao{
 			String sql = "update t_contract_process set state = ?, content = ?, time = ? " 
 					+"where user_id = ? and con_id = ? and type = ?";
 
-			// Pre-compiled sql, and set the parameter values
+			// Pre-compiled sql, and set the value to parameter 
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, conProcess.getState());
 			psmt.setString(2, conProcess.getContent());
@@ -199,7 +199,7 @@ public class ConProcessDaoImpl implements ConProcessDao{
 			e.printStackTrace();
 			throw new AppException("com.ruanko.dao.impl.ConProcessDaoImpl.update");
 		} finally {
-			// Close the database operation object, release resources
+			// Close the database operation object 
 			DBUtil.closeStatement(psmt);
 			DBUtil.closeConnection(conn);
 		}
@@ -212,13 +212,13 @@ public class ConProcessDaoImpl implements ConProcessDao{
 	 * @param con_id Contract id
 	 * @param type Operation type
 	 * @param state State corresponding to the operation type
-	 * @return otal number of eligible records
+	 * @return Total number of eligible records
 	 * @throws AppException
 	 */
 	public int getTotalCount(ConProcess conProcess) throws AppException{
 		int totalCount = 0; // Initialize totalCount
 		
-		//Declare Connection object,PreparedStatement object and ResultSet object
+		// Declare database connection object, pre-compiled object and results set object
 		Connection conn = null;
 		PreparedStatement psmt = null;
 		ResultSet rs = null;
@@ -226,12 +226,12 @@ public class ConProcessDaoImpl implements ConProcessDao{
 		try {
 			// Create database connection
 			conn = DBUtil.getConnection();
-			// Declare operation statement,Query total number of eligible records according to contract id,operation type and its processing state, "?" is a placeholder
+			// Declare operation statement:query total number of eligible records according to contract id,operation type and its processing state, "?" is a placeholder
 			String sql = "select count(id) as n from t_contract_process "
 				 +"where con_id = ? and type = ? and state = ?";
 				
 			psmt = conn.prepareStatement(sql);// Pre-compiled sql
-			// Set values for the placeholder 
+			// Set value to placeholder 
 			psmt.setInt(1, conProcess.getConId());
 			psmt.setInt(2, conProcess.getType());
 			psmt.setInt(3, conProcess.getState());
@@ -245,7 +245,7 @@ public class ConProcessDaoImpl implements ConProcessDao{
 			throw new AppException(
 			"com.ruanko.dao.impl.ConProcessDaoImpl.getTotalCount");
 		} finally {
-			// Close the database operation object, release resources
+			// Close database object operation, release resources
 			DBUtil.closeResultSet(rs);
 			DBUtil.closeStatement(psmt);
 			DBUtil.closeConnection(conn);
@@ -266,7 +266,7 @@ public class ConProcessDaoImpl implements ConProcessDao{
 		// Initialize ids
 		List<Integer> ids = new ArrayList<Integer>();
 		
-		//Declare Connection object,PreparedStatement object and ResultSet object
+		// Declare database connection object, pre-compiled object and results set object
 		Connection conn = null;
 		PreparedStatement psmt = null;
 		ResultSet rs = null;
@@ -274,7 +274,7 @@ public class ConProcessDaoImpl implements ConProcessDao{
 		try {
 			// Create database connection
 			conn = DBUtil.getConnection();
-			// Declare operation statement:query contract process id set according to contract id,operation type and its corresponding operation state, "?" is a placeholder
+			// Declare operation statement:query contract process id set according to contract id,operation type and its corresponding operation state, "?" is a Placeholder
 			String sql = "select id from t_contract_process " +
 					"where con_id= ? and type = ? and state = ? and del=0";
 				
@@ -287,7 +287,7 @@ public class ConProcessDaoImpl implements ConProcessDao{
 			// Execute query operation 
 			rs = psmt.executeQuery();
 			
-			// Get information in result set by loop,and save to Ids
+			// Get information in result set by loop,and save it to ids
 			while (rs.next()) {
 				ids.add(rs.getInt("id"));
 			}
@@ -296,7 +296,7 @@ public class ConProcessDaoImpl implements ConProcessDao{
 			throw new AppException(
 			"com.ruanko.dao.impl.ConProcessDaoImpl.getIds");
 		} finally {
-			// Close the database operation object, release resources
+			// Close database object operation, release resources
 			DBUtil.closeResultSet(rs);
 			DBUtil.closeStatement(psmt);
 			DBUtil.closeConnection(conn);
@@ -305,17 +305,17 @@ public class ConProcessDaoImpl implements ConProcessDao{
 	}
 	
 	/**
-	 *  Query contract process information according to contract process id
+	 * Query contract process information according to contract process id
 	 * 
 	 * @param id Contract id
-	 * @return Contract process object
+	 * @return  Contract process object
 	 * @throws AppException
 	 */
 	public ConProcess getById(int id) throws AppException {
 		// Declare conProcess
 		ConProcess conProcess = null;
 		
-		//Declare Connection object,PreparedStatement object and ResultSet object
+		// Declare database connection object, pre-compiled object and result set object
 		Connection conn = null;
 		PreparedStatement psmt = null;
 		ResultSet rs = null;
@@ -352,7 +352,7 @@ public class ConProcessDaoImpl implements ConProcessDao{
 			throw new AppException(
 					"com.ruanko.dao.impl.ConProcessDaoImpl.getById");
 		} finally {
-			// Close the database operation object, release resources
+			// Close database operation object 
 			DBUtil.closeResultSet(rs);
 			DBUtil.closeStatement(psmt);
 			DBUtil.closeConnection(conn);

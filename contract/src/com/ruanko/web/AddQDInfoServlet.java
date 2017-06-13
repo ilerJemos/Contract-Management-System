@@ -8,29 +8,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.ruanko.model.Contract;
+import com.ruanko.model.ConProcess;
 import com.ruanko.service.ContractService;
 import com.ruanko.utils.AppException;
+import com.ruanko.utils.Constant;
 
 /**
- * Servlet for accessing countersign page
+ * Servlet for signing contract
  */
-public class ToAddHQOpinionServlet extends HttpServlet {
+public class AddQDInfoServlet extends HttpServlet {
 
 	/**
-	 * Jump to countersign page
+	 * Process Post requests of signing contract
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// Set the request's character encoding
 		request.setCharacterEncoding("UTF-8");
-		
+
 		// Declare session
 		HttpSession session = null;
 		// Get session by using request
 		session = request.getSession();
-		Integer userId = (Integer)session.getAttribute("userId");
-		
+		Integer userId = (Integer) session.getAttribute("userId");
+
 		// If user is not login, jump to login page
 		if (userId == null) {
 			response.sendRedirect("toLogin");
@@ -38,18 +39,26 @@ public class ToAddHQOpinionServlet extends HttpServlet {
 
 			// Get contract id
 			int conId = Integer.parseInt(request.getParameter("conId"));
+			// Get sign opinion
+			String content = request.getParameter("content");
 
+			// Instantiation conProcess object to encapsulate sign information 
+			ConProcess conProcess = new ConProcess();
+			conProcess.setConId(conId);
+			conProcess.setUserId(userId);
+			conProcess.setContent(content);
+
+			/*
+			 * Call business logic layer corresponding method to process business logic
+			 */
 			try {
-				// Initialize contractService
+				//  Initialize contractService
 				ContractService contractService = new ContractService();
-				// Query contract information according to contract id
-				Contract contract = contractService.getContract(conId);
+				// Call business logic layer to sign contract
+				contractService.sign(conProcess);
 
-				// Save contract to request
-				request.setAttribute("contract", contract);
-				//  Forward to countersign page
-				request.getRequestDispatcher("/addHQOpinion.jsp").forward(
-						request, response);
+				// After signed contract,redirect to page of contract to be signed
+				response.sendRedirect("toDqdhtList");
 			} catch (AppException e) {
 				e.printStackTrace();
 				// Redirect to the exception page

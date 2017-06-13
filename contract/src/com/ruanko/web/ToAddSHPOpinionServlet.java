@@ -13,12 +13,12 @@ import com.ruanko.service.ContractService;
 import com.ruanko.utils.AppException;
 
 /**
- * Servlet for accessing countersign page
+ * Servlet for accessing approval page
  */
-public class ToAddHQOpinionServlet extends HttpServlet {
+public class ToAddSHPOpinionServlet extends HttpServlet {
 
 	/**
-	 * Jump to countersign page
+	 * Jump to approval page
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -42,13 +42,13 @@ public class ToAddHQOpinionServlet extends HttpServlet {
 			try {
 				// Initialize contractService
 				ContractService contractService = new ContractService();
-				// Query contract information according to contract id
+				// Query contract information according to Contract id
 				Contract contract = contractService.getContract(conId);
 
 				// Save contract to request
 				request.setAttribute("contract", contract);
-				//  Forward to countersign page
-				request.getRequestDispatcher("/addHQOpinion.jsp").forward(
+				// Forward to approval page
+				request.getRequestDispatcher("/addSHPOpinion.jsp").forward(
 						request, response);
 			} catch (AppException e) {
 				e.printStackTrace();

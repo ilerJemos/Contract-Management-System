@@ -267,4 +267,64 @@
 		<url-pattern>/showHQOpinion</url-pattern>
 	</servlet-mapping>
 	
+	<!-- Configure the access of ToDshphtListServlet -->
+	<servlet>
+		<servlet-name>toDshphtList</servlet-name>
+		<servlet-class>com.ruanko.web.ToDshphtListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>toDshphtList</servlet-name>
+		<url-pattern>/toDshphtList</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ToAddSHPOpinionServlet -->
+	<servlet>
+		<servlet-name>toAddSHPOpinion</servlet-name>
+		<servlet-class>com.ruanko.web.ToAddSHPOpinionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>toAddSHPOpinion</servlet-name>
+		<url-pattern>/toAddSHPOpinion</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of AddSHPOpinionServlet -->
+	<servlet>
+		<servlet-name>addSHPOpinion</servlet-name>
+		<servlet-class>com.ruanko.web.AddSHPOpinionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>addSHPOpinion</servlet-name>
+		<url-pattern>/addSHPOpinion</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ToDqdhtListServlet -->
+	<servlet>
+		<servlet-name>toDqdhtList</servlet-name>
+		<servlet-class>com.ruanko.web.ToDqdhtListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>toDqdhtList</servlet-name>
+		<url-pattern>/toDqdhtList</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of ToAddQDInfoServlet -->
+	<servlet>
+		<servlet-name>toAddQDInfo</servlet-name>
+		<servlet-class>com.ruanko.web.ToAddQDInfoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>toAddQDInfo</servlet-name>
+		<url-pattern>/toAddQDInfo</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Configure the access of AddQDInfoServlet -->
+	<servlet>
+		<servlet-name>addQDInfo</servlet-name>
+		<servlet-class>com.ruanko.web.AddQDInfoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>addQDInfo</servlet-name>
+		<url-pattern>/addQDInfo</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

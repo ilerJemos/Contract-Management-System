@@ -11,7 +11,7 @@ import com.ruanko.utils.AppException;
 public interface ConProcessDao {
 
 	/**
-	 * Determine whether the record of specified contract id is exist in the contract process table
+	 * Judgement whether the record of specified contract id is exist in the contract process table
 	 * 
 	 * @param conId Contract id
 	 * @return boolean Return true if exist,otherwise return false
@@ -65,7 +65,7 @@ public interface ConProcessDao {
 	 * @param conId Contract id
 	 * @param type Operation type 
 	 * @param state Operation state that corresponding operation type
-	 * @return ontract process id set 
+	 * @return Contract process id set 
 	 * @throws AppException
 	 */
 	public List<Integer> getIds(int conId, int type, int state) throws AppException;

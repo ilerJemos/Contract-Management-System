@@ -42,7 +42,7 @@
 					Approve
 				</dt>
 				<dd>
-					<a href="#">Contract to be approved</a>
+					<a href="toDshphtList" target="main">Contract to be approved</a>
 				</dd>
 				<dd>
 					<a href="#">Approved Contract</a>
@@ -53,7 +53,7 @@
 					Sign
 				</dt>
 				<dd>
-					<a href="#">Contract to be signed</a>
+					<a href="toDqdhtList" target="main">Contract to be signed</a>
 				</dd>
 				<dd>
 					<a href="#">Signed Contract</a>
