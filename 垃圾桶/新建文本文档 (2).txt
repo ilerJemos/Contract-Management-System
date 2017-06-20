@@ -1,4 +1,0 @@
-Theprogramgeneratesexceptionsofvarioustypeduring runtime.Iftheexceptions are allthrowntotheupperlayer,theupperlayergathers exceptionsofmultiple type.Thatmakes the upper layer even rely onthe definition of concreteexception classes.
-If method indata accesslayer haserror inits SQLstatement,SQLExceptionwill be generated.Iftheexceptionistransferredtobusiness logiclayerforprocessing,you need to import SQLExceptionclass.That¡¯swhat dependency means.
-Inordertomake it easy for the system to manage and locate exception,andto describeexceptionalmessage,weuse the following ways. (1) Exceptiondescriptionmechanism.code + exceptionmessage. (2) User-definedexceptionclass.Afterdifferent types of exceptionsarecaptured inside layers,user-definedexceptionsarethrownupward insteadwiththe exceptionalmessagesbeing carried.
-Throwthe exceptionclassthatcarriesspecificexceptionmessageupwardfrom dataaccesslayertoviewlayerforprocessing.
